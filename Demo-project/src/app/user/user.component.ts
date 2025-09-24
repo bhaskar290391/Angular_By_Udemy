@@ -38,9 +38,9 @@ export class UserComponent {
   // selectedUser = signal(DUMMY_USERS[randomIndex]);
   // imagePath = computed(() => 'assets/users/' + this.selectedUser().avatar);
 
-  // get imagePath() {
-  //   return 'assets/users/' + this.avator;
-  // }
+  get imagePath() {
+    return 'assets/users/' + this.avator;
+  }
 
   // onSelectedUser() {
   //   console.log('Clicked !!!');

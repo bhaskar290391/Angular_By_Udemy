@@ -1,4 +1,5 @@
 # Angular_By_Udemy
+
 Angular_By_Udemy
 
 ##########################################
@@ -12,28 +13,32 @@ npm --version
 ==> used to check the version of node package manager used for creating application.
 
 #####################################################################################
-npm install -g  @angular/cli
+npm install -g @angular/cli
 
-==> used to install angular cli 
+==> used to install angular cli
 
 ######################################################################################
 
 ng new first-angular-app
 
-==> Used to create new angular project 
+==> Used to create new angular project
 
 #####################################################################################
-npm start or ng serve 
+npm start or ng serve
 
-==> to start angular server 
+==> to start angular server
 
 ######################################################################################
 http://localhost:4200/
 
 #####################################################################################
 
- npm install
- 
- ==> Used to install all the angular dependencies
- 
- ####################################################################################
+npm install
+
+==> Used to install all the angular dependencies
+
+####################################################################################
+
+ng generate component users --skip-test
+
+==> used to create the dynamic component for angular application
