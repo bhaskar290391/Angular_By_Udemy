@@ -36,5 +36,9 @@
     }
   </ul>
 
+  @if (selectedUserDetails) {
   <app-tasks [name]="selectedUserDetails.name"></app-tasks>
+  } @else {
+  <p id="falseBackMethod">Please select the user to see thier task</p>
+  }
 </main>
