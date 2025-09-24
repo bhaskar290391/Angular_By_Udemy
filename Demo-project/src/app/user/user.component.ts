@@ -12,6 +12,18 @@ import { DUMMY_USERS } from '../dummy-users';
 
 const randomIndex = Math.floor(Math.random() * DUMMY_USERS.length);
 
+// type User = {
+//   id: string;
+//   name: string;
+//   avatar: string;
+// };
+
+interface User {
+  id: string;
+  name: string;
+  avatar: string;
+}
+
 @Component({
   selector: 'app-user',
   standalone: true,
@@ -19,10 +31,14 @@ const randomIndex = Math.floor(Math.random() * DUMMY_USERS.length);
   styleUrl: './user.component.css',
 })
 export class UserComponent {
+  //using object instead of singles input
+  @Input({ required: true }) user!: User;
+
   //using @Input and @Output decorator
-  @Input({ required: true }) id!: string;
-  @Input({ required: true }) avator!: string;
-  @Input({ required: true }) name!: string;
+  // @Input({ required: true }) id!: string;
+  // @Input({ required: true }) avator!: string;
+  // @Input({ required: true }) name!: string;
+
   @Output() select = new EventEmitter<string>();
 
   //using input and output function
@@ -39,7 +55,7 @@ export class UserComponent {
   // imagePath = computed(() => 'assets/users/' + this.selectedUser().avatar);
 
   get imagePath() {
-    return 'assets/users/' + this.avator;
+    return 'assets/users/' + this.user.avatar;
   }
 
   // onSelectedUser() {
@@ -56,6 +72,6 @@ export class UserComponent {
   // }
 
   onSelectedUser() {
-    this.select.emit(this.id);
+    this.select.emit(this.user.id);
   }
 }
